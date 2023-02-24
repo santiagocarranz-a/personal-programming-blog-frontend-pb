@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+:root {
+    /* Font Color */
+    --fontBlack: #000000;
+    --fontGrey:  #73737D;
+    --fontWhite: #ffffff;
+    --fontCream: #e9daac;
+    --fontLilac: #6166DC;
+    /* Background Color */
+    --backgroundColorBlack: #000000;
+    --backgroundColorWhite: #ffffff;
+    /* Tipografía */
+    --tipo-primary: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+    --tipo-secondary: Merriweather, Georgia, serif;;
+    --tipo-third: "SF Pro Display", -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+}
+
+* {
+    margin:  0;
+    padding: 0;
+    border:  0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+    background-color: var(--backgroundColorSecondary);
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-primary);
+    color: var(--fontBlack);
+    /* opcional */
+    line-height: 1.4em;
+    /* opcional */
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    /* opcional */
+    -webkit-font-smoothing: antialiased;
+    /* opcional */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* opcional */
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* opcional */
+    -o-object-position: center center;
+       object-position: center center;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+    list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style:  inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
