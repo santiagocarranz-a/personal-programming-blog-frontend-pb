@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+.container-author{
+    display: flex;
+}
+
+.container-icons{
+    display: flex;
+
+}
