@@ -1,0 +1,15 @@
+.icons{
+    display: flex;
+}
+
+.icons svg{
+    fill: var(--fontGrey);
+}
+
+.icons svg:hover{
+    fill: var(--fontWhite);
+} 
+
+.icon-linkedin{
+    padding-left: 1em;
+}

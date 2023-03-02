@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Luckiest+Guy&display=swap');
 .container{
     width: 100%;
     max-width: 1220px;
     margin: 0 auto;
     padding: 0 4rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -14,7 +15,27 @@
     display: flex;
 }
 
-.container-icons{
-    display: flex;
+.logo{
+    font-family: "Luckiest Guy";
+    font-size: 4.5em;
+}
 
+.container-icons{
+    font-size: 1.2em;
+    display: flex;
+    position: relative;
+    top: .5em;
+    color: var(--fontGrey);
+}
+
+.icon-author{
+    transition:color 0.25s ease;
+}
+
+.icon-author:hover{
+    color: var(--fontWhite);
+}
+
+.icon-color{
+    padding:0 .5em 0 3em;
 }

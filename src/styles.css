@@ -9,7 +9,7 @@
     --fontCream: #e9daac;
     --fontLilac: #6166DC;
     /* Background Color */
-    --backgroundColorBlack: #000000;
+    --backgroundColorBlack: #111216;
     --backgroundColorWhite: #ffffff;
     /* Tipografía */
     --tipo-primary: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
@@ -86,3 +86,7 @@ svg {
     fill: currentColor;
 }
 
+
+button{
+    cursor: pointer;
+}

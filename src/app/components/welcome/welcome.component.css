@@ -1,0 +1,84 @@
+.container{
+    margin-bottom: 5em;
+}
+
+.presentation-container{
+    margin:5em 0;
+    max-width: 652px;
+}
+
+.presentation-h2{
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+.presentation-h2 span{
+    font-weight: bold;
+}
+
+.author-and-modifier-container,
+.author-data-container,
+.position-modifier{
+    display: flex;
+}
+
+.author-and-modifier-container{
+    justify-content: space-between;
+}
+
+.author-img{
+    height: 40px;
+    width: 40px;
+    margin: 0px 26px 10px 0px;
+}
+
+.author-img img{
+    border-radius: 50%;
+}
+
+.author-data{
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--fontGrey);
+}
+
+
+.position-modifier{
+    align-items: center;
+}
+
+.button1{
+    margin-right: 30px;
+}
+.button1,
+.button2{
+   position: relative;
+   display: flex;
+   -webkit-box-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   justify-content: center;
+   height: 36px;
+   width: 36px;
+   border-radius: 50%;
+   background: transparent;
+   transition: background 0.25s ease 0s;
+
+}
+
+.button1:hover,
+.button2:hover{
+    background:rgba(49, 49, 49, 0.449);
+}
+
+.button1 svg,
+.button2 svg{
+    fill:var(--fontWhite);
+    opacity: 0.25;
+}
+
+.button1 svg:hover,
+.button2 svg:hover{
+    opacity: 1;
+}

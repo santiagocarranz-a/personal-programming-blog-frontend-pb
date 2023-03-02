@@ -4,3 +4,26 @@
     margin: 0 auto;
     padding: 0 4rem;
 }
+
+.container{
+    padding-bottom: 5em;
+}
+
+.more-articles h3{
+    opacity: 0.25;
+    padding-top: 4em;
+    padding-right: 0.5em;
+}
+
+.more-articles-text{
+    padding-bottom: 5em;
+    display: grid;  
+    grid-template-columns: auto 1fr;
+}
+
+.spacing{
+    border-bottom: .1rem var(--fontGrey) solid;
+    position: relative;
+    bottom: .7em;
+    opacity: 0.25;
+}

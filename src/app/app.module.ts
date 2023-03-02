@@ -16,6 +16,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { ArticleComponent } from './components/article/article.component';
 import { AboutTheAuthorComponent } from './components/about-the-author/about-the-author.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { NetworkIconsComponent } from './components/network-icons/network-icons.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     ArticleComponent,
     AboutTheAuthorComponent,
     WelcomeComponent,
+    NetworkIconsComponent,
   ],
   imports: [
     BrowserModule,
