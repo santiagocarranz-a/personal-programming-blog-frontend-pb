@@ -43,7 +43,6 @@
     color: var(--fontGrey);
 }
 
-
 .position-modifier{
     align-items: center;
 }
@@ -51,6 +50,7 @@
 .button1{
     margin-right: 30px;
 }
+
 .button1,
 .button2{
    position: relative;
@@ -64,7 +64,6 @@
    border-radius: 50%;
    background: transparent;
    transition: background 0.25s ease 0s;
-
 }
 
 .button1:hover,
@@ -76,9 +75,11 @@
 .button2 svg{
     fill:var(--fontWhite);
     opacity: 0.25;
+    transition: opacity 0.2s ease;
 }
 
-.button1 svg:hover,
-.button2 svg:hover{
-    opacity: 1;
+
+.activo {
+    fill:var(--fontWhite);
+    opacity: 1 !important;
 }

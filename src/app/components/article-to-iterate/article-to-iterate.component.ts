@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ArticleViewChangeService } from 'src/app/services/article-view-change.service';
 
 @Component({
   selector: 'app-article-to-iterate',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./article-to-iterate.component.css']
 })
 export class ArticleToIterateComponent {
+@Input() articleData:any
 
+constructor(public cssService: ArticleViewChangeService){}
 }

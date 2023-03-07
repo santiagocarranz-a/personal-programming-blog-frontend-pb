@@ -1,8 +1,6 @@
-<div class="container">
-    <app-article-to-iterate></app-article-to-iterate>
-    <app-article-to-iterate></app-article-to-iterate>
-    <app-article-to-iterate></app-article-to-iterate>
-    <app-article-to-iterate></app-article-to-iterate>
-    <app-article-to-iterate></app-article-to-iterate>
-    <app-article-to-iterate></app-article-to-iterate>
+<div [ngStyle]="cssService.cssParentProperties" class="container">
+  <div *ngFor="let item of itemNumber; let i = index" [ngClass]="'items items-' + i">
+    <app-article-to-iterate [articleData]="item"></app-article-to-iterate>
+  </div>
 </div>
+

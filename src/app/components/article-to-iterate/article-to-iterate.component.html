@@ -1,10 +1,10 @@
-<div class="container">
-    <a routerLink="/article:1" class="container-data">
+<div class="container" >
+    <a routerLink="/article:1" [ngStyle]="cssService.cssChildPropertiesData" class="container-data">
         <img src="./../../../assets/images/imagen-article2.png" alt="" >
-        <div class="container-data-text">
-            <h2>Angular Dependency Injection Infographic Updated</h2>
-            <h3>Updated the DI infographic with the latest features.</h3>
-            <p>January 16th, 2023  · 1 min read</p>
+        <div [ngStyle]="cssService.cssChildPropertiesDataText" class="container-data-text">
+            <h2>{{articleData.title}}</h2>
+            <h3>{{articleData.data}}</h3>
+            <p>{{articleData.date}}</p>
         </div>
     </a>
 </div>
