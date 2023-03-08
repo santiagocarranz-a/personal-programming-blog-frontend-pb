@@ -1,7 +1,7 @@
 <div class="container" >
-    <a routerLink="/article:1" [ngStyle]="cssService.cssChildPropertiesData" class="container-data">
+    <a routerLink="/article:1" [ngStyle]="cssService.cssChildPropertiesData" [ngClass]="stylesForMoreArticlesData" class="container-data">
         <img src="./../../../assets/images/imagen-article2.png" alt="" >
-        <div [ngStyle]="cssService.cssChildPropertiesDataText" class="container-data-text">
+        <div [ngStyle]="cssService.cssChildPropertiesDataText " [ngClass]="stylesForMoreArticlesDataText" class="container-data-text">
             <h2>{{articleData.title}}</h2>
             <h3>{{articleData.data}}</h3>
             <p>{{articleData.date}}</p>

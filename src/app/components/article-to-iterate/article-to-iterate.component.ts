@@ -8,6 +8,9 @@ import { ArticleViewChangeService } from 'src/app/services/article-view-change.s
 })
 export class ArticleToIterateComponent {
 @Input() articleData:any
+@Input() stylesForMoreArticlesData:any
+@Input() stylesForMoreArticlesDataText:any
+
 
 constructor(public cssService: ArticleViewChangeService){}
 }
