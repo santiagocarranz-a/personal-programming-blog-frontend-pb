@@ -7,13 +7,13 @@ export class ArticleService {
 
   itemNumber = [
     {
-      title:'Titulo 1',
-      data:'Data1',
+      title:'Angular: Manejo de la asyncronia con Observables',
+      data:'¿Que relación tienen Async, las Promesas y los Observables?',
       date:'January 16th, 2023  · 1 min read'
     },
     {
-      title:'Titulo 2',
-      data:'Data2',
+      title:'Titulo 2asdasdasd',
+      data:'Data2dasdasd',
       date:'January 16th, 2023  · 1 min read'
     },
     {

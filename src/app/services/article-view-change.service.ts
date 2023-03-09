@@ -20,6 +20,7 @@ export class ArticleViewChangeService {
     },
     'componentChild':{
       'containerData':{
+        display:'flex',
         flexDirection: 'column',
         alignItems: 'start',
         paddingBottom: '1.5em'
