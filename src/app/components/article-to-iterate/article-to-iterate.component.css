@@ -3,9 +3,7 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 488px;
     column-gap: 96px;
-    -webkit-box-align: center;
     align-items: center;
-    position: relative;
     margin-bottom: 50px;
     transition: transform .3s;
 }
@@ -27,7 +25,6 @@
     font-family: var(--tipo-secondary);
     margin-bottom: 10px;
     transition: color 0.2s ease-in-out 0s;
-    overflow-wrap: normal;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;

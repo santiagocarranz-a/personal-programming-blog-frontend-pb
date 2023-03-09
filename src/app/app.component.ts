@@ -11,7 +11,7 @@ export class AppComponent  implements OnInit{
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Desplaza a la parte superior de la página en cada cambio de ruta
+    // Desplaza hacia la parte superior del sitio en cada cambio de ruta
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0);

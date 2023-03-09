@@ -29,7 +29,7 @@
 
  /* Definimos estilos para la barra Scroll */
 body::-webkit-scrollbar{
-    width: 10px;
+    width: 14px;
     background: var(--fontGrey);
 }
 
@@ -81,9 +81,9 @@ li {
 }
 
 /* Configuramos anclas suaves */
-html {
-    scroll-behavior: smooth;
-}
+/* html {
+    scroll-behavior: auto;
+} */
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
@@ -101,7 +101,7 @@ svg {
     fill: currentColor;
 }
 
-
+/* Agregamos la propiedad pointer a todos los botones */
 button{
     cursor: pointer;
 }

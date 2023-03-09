@@ -18,6 +18,7 @@ export class ArticleViewChangeService {
       gridTemplateColumns: '1fr 1fr',
       columnGap: '30px',
     },
+    
     'componentChild':{
       'containerData':{
         display:'flex',

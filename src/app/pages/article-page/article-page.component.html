@@ -5,18 +5,14 @@
             <h3>Más articulos de Santiago Carranza</h3>
             <div class="spacing"></div>
         </div>
-        <div  class="articles-to-iterate">
-
-            
-                <div *ngFor="let item of itemNumber.slice(0, 2); let i = index" [ngClass]="'items items-' + i">
-                    <app-article-to-iterate 
+        <div class="articles-to-iterate">
+            <div *ngFor="let item of itemNumber.slice(0, 2);">
+                <app-article-to-iterate 
                     [articleData]="item" 
                     [stylesForMoreArticlesData]="stylesForMoreArticlesData" 
                     [stylesForMoreArticlesDataText]="stylesForMoreArticlesDataText">
-                    </app-article-to-iterate>
-                </div>
-            
-
+                </app-article-to-iterate>
+            </div>
         </div>
     </div>  
 </div>

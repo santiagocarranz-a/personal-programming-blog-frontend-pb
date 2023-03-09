@@ -57,14 +57,11 @@
 
 /* Article Data Section */
 .img-hero{
-    margin: 0 auto;
-    margin-bottom: 6em;
-    max-height: 50%;
     box-shadow: 0 30px 60px -10px rgb(0 0 0 / 20%), 0 18px 36px -18px rgb(0 0 0 / 22%);
 }
 
 .article-info{
-    margin: 6em auto;
+    margin: 6em auto 1em;
     padding-left: 68px;
     padding-right: 68px;
     max-width: 749px;
@@ -75,12 +72,15 @@
     font-weight:700;
     line-height:42.656px;
     font-family: var(--tipo-secondary);
+    padding-top: 1.5em;
+    padding-bottom: 1em;
 }
 
 .article-info p{
     font-size:18px;
     font-family: var(--tipo-third);
     line-height: 1.756;
+    padding-bottom: 1em;
 }
 
 .link{

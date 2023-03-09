@@ -16,13 +16,12 @@
     font-weight: bold;
 }
 
-.author-and-modifier-container,
-.author-data-container,
-.position-modifier{
+.author-data-container{
     display: flex;
 }
 
 .author-and-modifier-container{
+    display: flex;
     justify-content: space-between;
 }
 
@@ -43,7 +42,10 @@
     color: var(--fontGrey);
 }
 
-.position-modifier{
+
+/* Article view change section */
+.change-view-articles{
+    display: flex;
     align-items: center;
 }
 
@@ -77,7 +79,6 @@
     opacity: 0.25;
     transition: opacity 0.2s ease;
 }
-
 
 .activo {
     fill:var(--fontWhite);

@@ -2,23 +2,26 @@
     width: 100%;
     max-width: 1220px;
     margin: 0 auto;
-    padding: 0 4rem;
 }
 
 .container{
-    padding-bottom: 5em;
+    padding-bottom: 4em;
 }
 
-.more-articles h3{
-    opacity: 0.25;
-    padding-top: 4em;
-    padding-right: 0.5em;
+.more-articles{
+    padding: 0 4rem;
 }
 
 .more-articles-text{
     padding-bottom: 5em;
+    padding-top: 5em;
     display: grid;  
     grid-template-columns: auto 1fr;
+}
+
+.more-articles h3{
+    opacity: 0.25;
+    padding-right: 0.5em;
 }
 
 .spacing{
@@ -29,7 +32,7 @@
 }
 
 .articles-to-iterate{
-display: grid;
-grid-template-columns: 1fr 1fr;
-column-gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
 }
