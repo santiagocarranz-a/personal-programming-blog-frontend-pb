@@ -23,7 +23,7 @@
     font-size: 1.2em;
     display: flex;
     position: relative;
-    top: .5em;
+    top: .2em;
     color: var(--fontGrey);
 }
 

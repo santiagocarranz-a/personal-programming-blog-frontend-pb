@@ -1,7 +1,7 @@
 .container-data{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 488px;
+    grid-template-columns: 1fr 1fr;
     column-gap: 96px;
     align-items: center;
     margin-bottom: 50px;
@@ -58,6 +58,8 @@
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 1.5em;
+    background-color: rgb(50, 47, 213);
+
 }
 
 .dataText{
