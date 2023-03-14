@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from 'src/app/services/article.service';
+import { ArticleService } from 'src/app/shared/services/article.service';
 
 @Component({
   selector: 'app-search-modal',

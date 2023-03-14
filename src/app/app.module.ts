@@ -36,7 +36,7 @@ import { SearchModalComponent } from './components/search-modal/search-modal.com
     AboutTheAuthorComponent,
     WelcomeComponent,
     NetworkIconsComponent,
-    SearchModalComponent,
+    SearchModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 <div class="container">
-    <div class="presentation-container">
-        <h2 class="presentation-h2"><span>Hola, soy Santiago</span>, vivo en Buenos Aires, Argentina. <hr>Soy un desarrollador de software <span> apasionado por JavaScript</span> y las tecnologías web.</h2>
+    <div class="presentation-container" [ngClass]="getClasses()">
+        <h2 class="presentation-h2" [ngClass]="getClasses()"
+        ><span>Hola, soy Santiago</span>, vivo en Buenos Aires, Argentina. <hr>Soy un desarrollador de software <span> apasionado por JavaScript</span> y las tecnologías web.</h2>
     </div>
     <div class="author-and-modifier-container">
         <div class="author-data-container">
@@ -9,7 +10,7 @@
                     <img src="../../../assets/images/img-40px.png" alt="">
                 </a>
             </div>
-            <div class="author-data">Soy un desarrollador de software apasionado por JavaScript y las tecnologías web, viviendo en Buenos Aires, Argentina</div>
+            <div class="author-data">Viviendo actualmente Buenos Aires, Argentina. Desarrollador de software apasionado por JavaScript y las tecnologías web.</div>
         </div>
         
         <div class="change-view-articles">

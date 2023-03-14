@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ArticleViewChangeService } from 'src/app/services/article-view-change.service';
+import { ArticleViewChangeService } from 'src/app/shared/services/article-view-change.service';
 
 @Component({
   selector: 'app-article-to-iterate',

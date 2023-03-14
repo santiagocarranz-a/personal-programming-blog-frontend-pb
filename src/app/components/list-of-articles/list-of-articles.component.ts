@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { ArticleViewChangeService } from 'src/app/services/article-view-change.service';
-import { ArticleService } from 'src/app/services/article.service';
+import { ArticleViewChangeService } from 'src/app/shared/services/article-view-change.service';
+import { ArticleService } from 'src/app/shared/services/article.service';
 
 @Component({
   selector: 'app-list-of-articles',

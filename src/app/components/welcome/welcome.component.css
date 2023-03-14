@@ -27,12 +27,14 @@
 }
 
 .author-img{
-    height: 40px;
-    width: 40px;
+    position: relative;
+    bottom: .3em;
     margin: 0px 26px 10px 0px;
 }
 
 .author-img img{
+    border-radius: 50%;
+    border: thick double rgba(0, 0, 0, 0.25) ;
     border-radius: 50%;
 }
 
@@ -88,4 +90,29 @@
 .activo {
     fill:var(--fontWhite);
     opacity: 1 !important;
+}
+
+
+/* STYLES FOR LARGE RESPONSIVE VIEW */
+.presentation-h2.large{
+    font-size: 48px;
+    color: rgb(0, 17, 255);
+
+}
+/* STYLES FOR MEDIUM RESPONSIVE VIEW */
+.presentation-h2.medium,
+.presentation-h2.small{
+    font-size: 38px;
+    color: aqua;
+}
+/* STYLES FOR SMALL RESPONSIVE VIEW */
+.presentation-container.small{
+    width: 100%;
+}
+
+/* STYLES FOR XSMALL RESPONSIVE VIEW */
+.presentation-h2.xSmall{
+    font-size: 28px;
+    color: rgb(255, 55, 0);
+
 }

@@ -5,16 +5,14 @@
 }
 
 .container{
-    padding-bottom: 4em;
 }
 
 .more-articles{
-    padding: 0 4rem;
 }
 
 .more-articles-text{
-    padding-bottom: 5em;
-    padding-top: 5em;
+    
+    padding: 5em 2.5em 5em;
     display: grid;  
     grid-template-columns: auto 1fr;
 }
@@ -35,4 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
+    padding: 0 4rem;
+
+
 }
