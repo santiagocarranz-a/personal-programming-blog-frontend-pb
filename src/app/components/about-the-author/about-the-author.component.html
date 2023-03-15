@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" [ngClass]="getClasses()">
     <img src="../../../assets/images/author-200px.png" alt="">
-    <h1>Santiago Carranza</h1>
+    <h1 [ngClass]="getClasses()">Santiago Carranza</h1>
     <p>Viviendo actualmente Buenos Aires, Argentina. Desarrollador de software apasionado por JavaScript y las tecnologías web.</p>
     <app-network-icons class="icons"></app-network-icons>
 </div>

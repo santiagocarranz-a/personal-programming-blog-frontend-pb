@@ -24,7 +24,7 @@ export class WelcomeComponent {
     });
   }
 
-  // asdasdasdasdasdasdasdasdasdasdasdasdasdasd
+  // get classes for responsive design
   getClasses() {
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }

@@ -34,7 +34,6 @@ export class ResponsiveService{
     )
     .subscribe(responsiveSizes => {
       this.responsiveSizesSubject.next(responsiveSizes);
-      console.log('responsiveSizes', responsiveSizes);
     });
   }
   

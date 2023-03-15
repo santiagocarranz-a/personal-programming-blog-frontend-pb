@@ -63,3 +63,23 @@
 .dataText{
     padding-top: 1.5em;
 }
+
+
+/* STYLES FOR SMALL RESPONSIVE VIEW */
+.container-data.small{
+    column-gap: 46px;
+}
+
+
+/* STYLES FOR XSMALL RESPONSIVE VIEW */
+.container-data.xSmall{
+    column-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.container-data-text{
+    flex-direction: column;
+    padding-top: 1em;
+}

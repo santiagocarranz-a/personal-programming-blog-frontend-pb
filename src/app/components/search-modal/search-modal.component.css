@@ -82,7 +82,7 @@
 
 /* Definimos estilos para la barra Scroll */
 .articles::-webkit-scrollbar{
-  width: 14px;
+  width: .5em;
   background: var(--fontGrey);
   border-radius: 10px; 
 }
@@ -94,4 +94,14 @@
 
 .articles::-webkit-scrollbar-thumb:hover{ 
   background: rgba(207, 206, 206, 0.933);
+}
+
+
+/* STYLES FOR XSMALL RESPONSIVE VIEW */
+.search-form.xSmall{
+  padding: 2em 0.5em 2em
+}
+
+.articles.xSmall{
+  padding: 1em 0.5em
 }

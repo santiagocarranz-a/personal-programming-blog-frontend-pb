@@ -29,7 +29,7 @@
 
  /* Definimos estilos para la barra Scroll */
 body::-webkit-scrollbar{
-    width: 14px;
+    width: .5em;
     background: var(--fontGrey);
 }
 

@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container" [ngClass]="getClasses()">
     <div class="presentation-container" [ngClass]="getClasses()">
         <h2 class="presentation-h2" [ngClass]="getClasses()"
         ><span>Hola, soy Santiago</span>, vivo en Buenos Aires, Argentina. <hr>Soy un desarrollador de software <span> apasionado por JavaScript</span> y las tecnologías web.</h2>
     </div>
-    <div class="author-and-modifier-container">
-        <div class="author-data-container">
+    <div class="author-and-modifier-container" [ngClass]="getClasses()">
+        <div class="author-data-container" [ngClass]="getClasses()">
             <div class="author-img">
                 <a routerLink="/author">
                     <img src="../../../assets/images/img-40px.png" alt="">
                 </a>
             </div>
-            <div class="author-data">Viviendo actualmente Buenos Aires, Argentina. Desarrollador de software apasionado por JavaScript y las tecnologías web.</div>
+            <div class="author-data" [ngClass]="getClasses()">Viviendo actualmente Buenos Aires, Argentina. Desarrollador de software apasionado por JavaScript y las tecnologías web.</div>
         </div>
         
-        <div class="change-view-articles">
+        <div class="change-view-articles" [ngClass]="getClasses()">
             <app-search-modal class="lupa-search" (click)="updateRow()"></app-search-modal>
             <button class="button1" title="Ver articulos en formato Tile" (click)="updateTile();btnTile=true;btnRow=false; ">
                 <svg [class.activo]="btnTile" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">

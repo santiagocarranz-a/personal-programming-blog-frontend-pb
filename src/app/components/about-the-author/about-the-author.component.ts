@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-about-the-author',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-the-author.component.css']
 })
 export class AboutTheAuthorComponent {
+  responsiveSizes={
+    xSmall: false,
+    small: false,
+    medium: false,
+    large: false
+  }
 
+  constructor(private ResponsiveService:ResponsiveService){
+    this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
+      this.responsiveSizes = responsiveSizes;
+    });
+  }
+
+   // get classes for responsive design
+   getClasses() {
+    return this.ResponsiveService.getClasses(this.responsiveSizes);
+  }
 }

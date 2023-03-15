@@ -96,23 +96,51 @@
 /* STYLES FOR LARGE RESPONSIVE VIEW */
 .presentation-h2.large{
     font-size: 48px;
-    color: rgb(0, 17, 255);
-
 }
+
 /* STYLES FOR MEDIUM RESPONSIVE VIEW */
 .presentation-h2.medium,
 .presentation-h2.small{
     font-size: 38px;
-    color: aqua;
 }
+
 /* STYLES FOR SMALL RESPONSIVE VIEW */
+.container.small{
+    margin-bottom: 3em;
+}
+
 .presentation-container.small{
-    width: 100%;
+    margin: 5em 0 4em;
+}
+
+.author-and-modifier-container.small,
+.author-and-modifier-container.xSmall{
+    flex-direction: column;
+}
+
+.change-view-articles.small,
+.change-view-articles.xSmall{
+    margin: 1.3em auto 0;
+    padding-bottom: 0;
 }
 
 /* STYLES FOR XSMALL RESPONSIVE VIEW */
+.container.xSmall{
+    margin-bottom: 2em;
+}
+
+.presentation-container.xSmall{
+    margin: 5em 0 4em;
+}
+
 .presentation-h2.xSmall{
     font-size: 28px;
-    color: rgb(255, 55, 0);
+}
 
+.author-data-container.xSmall{
+    display: none;
+}
+
+.change-view-articles.xSmall{
+    margin: 0 auto;
 }

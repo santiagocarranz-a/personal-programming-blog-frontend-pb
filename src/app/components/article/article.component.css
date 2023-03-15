@@ -90,3 +90,83 @@
 .link:hover{
     text-decoration: underline;
 }
+
+
+
+/* STYLES FOR MEDIUM RESPONSIVE VIEW */
+.container-presentation.medium{
+    padding-left: 53px;
+}
+
+
+/* STYLES FOR SMALL RESPONSIVE VIEW */
+.container-presentation.small{
+    padding: 0 2.5rem;
+}
+
+.container-presentation h1.small{
+    font-size: 38px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.author-and-date.small{
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-and-date p.small{
+    position: relative;
+    left: .3em;
+}
+
+.author-and-date span.small{
+    display: none;
+}
+
+.article-info h2.small{
+    padding-top: 0.4em
+}
+
+.article-info p.small{
+    padding-bottom: 0.5em;
+}
+
+
+/* STYLES FOR XSMALL RESPONSIVE VIEW */
+.container-presentation.xSmall{
+    padding: 0 2.5rem;
+}
+
+.container-presentation h1.xSmall{
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.author-and-date.xSmall{
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-and-date p.xSmall{
+    position: relative;
+    left: .3em;
+}
+
+.author-and-date span.xSmall{
+    display: none;
+}
+
+.article-info.xSmall{
+    margin-top: 3em;
+    padding: 0 2.5rem;
+}
+
+.article-info h2.xSmall{
+    padding-top: 0.6em
+}
+
+.article-info p.xSmall{
+    padding-bottom: 0.7em;
+}

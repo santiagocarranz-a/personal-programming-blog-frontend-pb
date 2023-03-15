@@ -9,10 +9,10 @@
   
   <div class="backdrop" *ngIf="showModal" (click)="closeModal($event)">
     <div class="modal">
-        <form action="/" method="get" class="search-form">
+        <form action="/" method="get" class="search-form" [ngClass]="getClasses()">
             <input type="text" placeholder="Buscar articulo...">
         </form>
-        <div class="articles">
+        <div class="articles" [ngClass]="getClasses()">
             <div *ngFor="let item of itemNumber">
               <app-article-to-iterate 
               [articleData]="item"

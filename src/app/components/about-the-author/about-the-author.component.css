@@ -34,3 +34,13 @@
 .icons{
     margin-top: 2em;
 }
+
+/* STYLES FOR XSMALL RESPONSIVE VIEW */
+.container.xSmall{
+    padding-top: 24%;
+}
+
+.container h1.xSmall{
+    line-height: 1.1;
+    text-align: center;
+}
