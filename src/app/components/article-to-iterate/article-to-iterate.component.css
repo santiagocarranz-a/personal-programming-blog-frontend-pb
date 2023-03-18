@@ -9,7 +9,7 @@
 }
 
 .container-data:hover{
-    color: var(--fontCream);
+    color: var(--color-link);
     transform: translateY(-3px);
 }
 
@@ -40,15 +40,15 @@
     overflow: hidden;
     font-size: 16px;
     margin-bottom: 10px;
-    color: var(--fontGrey);
+    color: var(--text-second);
     max-width: 515px;
 }
 
 .container-data-text p{
     font-weight: 600;
     font-size: 16px;
-    color: var(--fontGrey);
-    opacity: 0.33;
+    color: var(--text-third);
+    opacity: .6;
 }
 
 
@@ -76,10 +76,14 @@
     column-gap: 16px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
-.container-data-text{
+.container-data-text.xSmall{
     flex-direction: column;
     padding-top: 1em;
+}
+
+.container-data-text h2.xSmall{
+    font-size: 20px;
 }

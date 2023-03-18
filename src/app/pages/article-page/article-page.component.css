@@ -23,7 +23,7 @@
 }
 
 .spacing{
-    border-bottom: .1rem var(--fontGrey) solid;
+    border-bottom: .1rem var(--text-second) solid;
     position: relative;
     bottom: .7em;
     opacity: 0.25;

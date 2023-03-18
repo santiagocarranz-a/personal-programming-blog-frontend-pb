@@ -2,7 +2,7 @@
     <a routerLink="/article:1" [ngStyle]="cssService.cssChildPropertiesData" [ngClass]="stylesForMoreArticlesData" class="container-data" [ngClass]="getClasses()">
         <img src="./../../../assets/images/imagen-article2.png" alt="" >
         <div [ngStyle]="cssService.cssChildPropertiesDataText " [ngClass]="stylesForMoreArticlesDataText" class="container-data-text" [ngClass]="getClasses()">
-            <h2>{{articleData.title}}</h2>
+            <h2 [ngClass]="getClasses()">{{articleData.title}}</h2>
             <h3>{{articleData.data}}</h3>
             <p>{{articleData.date}}</p>
         </div>

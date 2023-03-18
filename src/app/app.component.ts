@@ -16,5 +16,11 @@ export class AppComponent  implements OnInit{
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0);
     }});
+
+    // Aplica estilos para el "modo día"
+    const theme = localStorage.getItem('theme-color-mode');
+    if (theme === 'white-theme') {
+      document.body.classList.add('white-theme');
+    }
   }
 }

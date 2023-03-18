@@ -4,7 +4,7 @@
 
 .presentation-container{
     margin:6em 0 5em;
-    max-width: 652px;
+    max-width: 659px;
 }
 
 .presentation-h2{
@@ -40,9 +40,11 @@
 
 .author-data{
     max-width: 430px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
-    color: var(--fontGrey);
+    color: var(--text-second);
+    max-width: 458px;
+
 }
 
 
@@ -77,19 +79,17 @@
 
 .button1:hover,
 .button2:hover{
-    background:rgba(49, 49, 49, 0.449);
+    background:var(--icon-hover);
 }
 
 .button1 svg,
 .button2 svg{
-    fill:var(--fontWhite);
-    opacity: 0.25;
+    fill:var(--color-icon);
     transition: opacity 0.2s ease;
 }
 
-.activo {
-    fill:var(--fontWhite);
-    opacity: 1 !important;
+.activo path{
+    fill:var(--text-color);
 }
 
 

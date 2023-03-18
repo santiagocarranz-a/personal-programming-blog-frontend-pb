@@ -16,15 +16,13 @@
 }
 
 .container-icon:hover{
-  background:rgba(49, 49, 49, 0.449);
+  background:var(--icon-hover);
 }
 
 .icon{
   width: 26px;
   height: 26px;
-  fill:var(--fontWhite);
-  opacity: 0.25;
-
+  fill:var(--color-icon);
 }
 
 
@@ -47,7 +45,7 @@
   left: 15%;
   width: 70%;
   height: 70%;
-  background-color: #111216;
+  background-color: var(--bkg-modal);
   box-shadow: rgb(0 0 0 / 30%) 0px 30px 60px -10px, rgb(0 0 0 / 33%) 0px 18px 36px -18px;
   opacity: 1;
   z-index: 60;
@@ -62,9 +60,11 @@
   position: static;
   width: 100%;
   padding: 2em 2em 2em;
+
 }
 
 .search-form input {
+  background-color: var(--bkg-modal-input);
   width: 100%;
   padding: 1em;
   border-radius: 2em;

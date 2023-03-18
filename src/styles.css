@@ -5,16 +5,38 @@
     /* Font Color */
     --fontBlack: #000000;
     --fontGrey:  #73737D;
+    --text-second:#73737D;
+    --text-third:#73737D;
+    --icon-hover:#31313172;
     --fontWhite: #ffffff;
+    --text-color:#ffffff;
     --fontCream: #e9daac;
+    --color-link:#e9daac;
+    --color-icon:#5b5858;
     --fontLilac: #6166DC;
     /* Background Color */
+    --bkg-color:#111216;
+    --bkg-modal:#111216;
+    --bkg-modal-input:#b4caca34;
     --backgroundColorBlack: #111216;
     --backgroundColorWhite: #ffffff;
     /* Tipografía */
     --tipo-primary: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
     --tipo-secondary: Merriweather, Georgia, serif;;
     --tipo-third: "SF Pro Display", -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+}
+
+/* Agregamos una clase para ser utilizada en el modo día */
+body.white-theme{
+    --bkg-color:#fff;
+    --bkg-modal:#ffffffd2;
+    --bkg-modal-input:#fffefe;
+    --text-color:#000000;
+    --color-link:#6166DC;
+    --color-icon:#666363;
+    --text-second:#3a3a42;
+    --text-third:#37373b;
+    --icon-hover:#8d8a8a72;
 }
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
@@ -34,22 +56,22 @@ body::-webkit-scrollbar{
 }
 
 body::-webkit-scrollbar-thumb{
-    background: rgb(255, 255, 255);
+    background: var(--text-color);
     border-radius: 10px; 
 }
 
 body::-webkit-scrollbar-thumb:hover{ 
-    background: rgba(207, 206, 206, 0.933);
+    background: var(--color-link);
 }
 
 /* Definimos propiedades en body*/
 body {
     position: relative;
-    background-color: var(--backgroundColorBlack);
+    background-color: var(--bkg-color);
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--tipo-primary);
-    color: var(--fontWhite);
+    color: var(--text-color);
     /* opcional */
     line-height: 1.4em;
     /* opcional */

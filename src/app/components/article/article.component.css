@@ -39,7 +39,7 @@
 .author-and-date p{
     font-size: 18px;
     line-height:25.2px;
-    color: var(--fontGrey);
+    color: var(--text-second);
     padding-bottom: .6em;
     position: relative;
     right: .8em;
@@ -51,7 +51,7 @@
 }
 
 .author-and-date a p:hover{
-    color: var(--fontWhite);
+    color: var(--text-color);
 }
 
 
@@ -84,7 +84,7 @@
 }
 
 .link{
-    color: var(--fontCream);
+    color: var(--color-link);
 }
 
 .link:hover{

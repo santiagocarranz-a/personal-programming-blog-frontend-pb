@@ -3,11 +3,11 @@
 }
 
 .icons svg{
-    fill: var(--fontGrey);
+    fill: var(--color-icon);
 }
 
 .icons svg:hover{
-    fill: var(--fontWhite);
+    fill: var(--text-color);
 } 
 
 .icon-linkedin{

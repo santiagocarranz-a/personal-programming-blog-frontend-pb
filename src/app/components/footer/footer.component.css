@@ -12,13 +12,16 @@
 
 .spacing{
     margin: 3rem 0 3rem 0 ;
-    border-bottom: .1rem var(--fontGrey) solid;
+    border-bottom: .1rem var(--text-second) solid;
     opacity: 0.25;
 }
 
 .container-info{
+    color: var(--text-second);
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
+    padding: 0 2em;
     margin-bottom: .5rem;
 }
 
@@ -27,6 +30,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 0;
+    padding: 0;
 }
 
 .author.xSmall{
