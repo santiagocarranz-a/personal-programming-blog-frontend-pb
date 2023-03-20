@@ -19,11 +19,12 @@ export class ArticlePageComponent implements OnInit{
     large: false
   }
 
-  constructor(public cssService: ArticleViewChangeService , public article:ArticleService, private ResponsiveService:ResponsiveService){
+  constructor(public article:ArticleService, private ResponsiveService:ResponsiveService){
     this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
       this.responsiveSizes = responsiveSizes;
     });
   }
+  
   // get classes for responsive design
   getClasses() {
     return this.ResponsiveService.getClasses(this.responsiveSizes);

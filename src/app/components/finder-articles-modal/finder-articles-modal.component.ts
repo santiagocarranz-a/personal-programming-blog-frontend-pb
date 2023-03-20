@@ -3,11 +3,11 @@ import { ArticleService } from 'src/app/shared/services/article.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
-  selector: 'app-search-modal',
-  templateUrl: './search-modal.component.html',
-  styleUrls: ['./search-modal.component.css']
+  selector: 'app-finder-articles-modal',
+  templateUrl: './finder-articles-modal.component.html',
+  styleUrls: ['./finder-articles-modal.component.css']
 })
-export class SearchModalComponent implements OnInit{
+export class FinderArticlesModalComponent implements OnInit{
   showModal = false;
   itemNumber!:Array<Object>
   responsiveSizes={
@@ -28,7 +28,7 @@ export class SearchModalComponent implements OnInit{
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }
 
-  toggleModal() {
+  openModal() {
     this.showModal = !this.showModal;
     document.body.style.overflowY = 'hidden';
     document.body.style.paddingRight = '14px';

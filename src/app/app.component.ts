@@ -11,13 +11,13 @@ export class AppComponent  implements OnInit{
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Desplaza hacia la parte superior del sitio en cada cambio de ruta
+    // Scroll to the top of the site on every route change
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0);
     }});
 
-    // Aplica estilos para el "modo día"
+    // Apply styles for "day mode"
     const theme = localStorage.getItem('theme-color-mode');
     if (theme === 'white-theme') {
       document.body.classList.add('white-theme');

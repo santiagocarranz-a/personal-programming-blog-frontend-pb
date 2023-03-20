@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchModalComponent } from './search-modal.component';
+import { FinderArticlesModalComponent } from './finder-articles-modal.component';
 
 describe('SearchModalComponent', () => {
-  let component: SearchModalComponent;
-  let fixture: ComponentFixture<SearchModalComponent>;
+  let component: FinderArticlesModalComponent;
+  let fixture: ComponentFixture<FinderArticlesModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchModalComponent ]
+      declarations: [ FinderArticlesModalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearchModalComponent);
+    fixture = TestBed.createComponent(FinderArticlesModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

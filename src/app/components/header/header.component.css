@@ -51,7 +51,9 @@
     color: var(--text-color);
 }
 
-.openClose{
+/* styles for menu hamburguer */
+
+.menu-hamburguer-display{
     display: none;
 }
 
@@ -124,4 +126,5 @@
 .close-hamburguer-container{
     position: absolute;
     right: 25px;
+    cursor: pointer;
 }

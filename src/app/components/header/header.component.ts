@@ -9,7 +9,6 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class HeaderComponent implements OnInit{
   iconModeTheme!:boolean
   hamburgerValue=true
-  backDropMenuHamburguer = false;
   responsiveSizes={
     xSmall: false,
     small: false,
@@ -28,8 +27,6 @@ export class HeaderComponent implements OnInit{
     this.iconModeTheme = document.body.classList.contains('white-theme');
   }
   
-
-  // Toggle them mode color
   toggleThemeMode(): void {
     const body = document.body;
     body.classList.toggle('white-theme');
@@ -38,13 +35,11 @@ export class HeaderComponent implements OnInit{
     isWhiteTheme?this.iconModeTheme=true:this.iconModeTheme=false
   }
 
-  // Toggle show menu hamburger
   toggleShowMenuHamburger(event: any) {
     if (event.target.classList.contains('backdrop') || 
         event.target.classList.contains('close') ||
         event.target.classList.contains('close-hamburguer-container')) {
       this.hamburgerValue = true
-      console.log(event)
     }
   }
 
@@ -53,8 +48,7 @@ export class HeaderComponent implements OnInit{
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }
 
-  activatedHamburger(){
+  openHamburger(){
     this.hamburgerValue = !this.hamburgerValue
   }
-
 }

@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit{
     large: false
   }
 
-  constructor(public article:ArticleService, private ResponsiveService:ResponsiveService){
+  constructor(public Article:ArticleService, private ResponsiveService:ResponsiveService){
     this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
       this.responsiveSizes = responsiveSizes;
     });
@@ -28,6 +28,6 @@ export class ArticleComponent implements OnInit{
   }
   
   ngOnInit(): void {
-    this.itemNumber = this.article.itemNumber
+    this.itemNumber = this.Article.itemNumber
   }
 }

@@ -9,7 +9,6 @@ import { AuthorPageComponent } from './pages/author-page/author-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { ArticleFinderComponent } from './components/article-finder/article-finder.component';
 import { ListOfArticlesComponent } from './components/list-of-articles/list-of-articles.component';
 import { ArticleToIterateComponent } from './components/article-to-iterate/article-to-iterate.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
@@ -17,7 +16,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { AboutTheAuthorComponent } from './components/about-the-author/about-the-author.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NetworkIconsComponent } from './components/network-icons/network-icons.component';
-import { SearchModalComponent } from './components/search-modal/search-modal.component';
+import { FinderArticlesModalComponent } from './components/finder-articles-modal/finder-articles-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { SearchModalComponent } from './components/search-modal/search-modal.com
     HeaderComponent,
     FooterComponent,
     NotFoundPageComponent,
-    ArticleFinderComponent,
     ListOfArticlesComponent,
     ArticleToIterateComponent,
     PaginationComponent,
@@ -36,7 +34,7 @@ import { SearchModalComponent } from './components/search-modal/search-modal.com
     AboutTheAuthorComponent,
     WelcomeComponent,
     NetworkIconsComponent,
-    SearchModalComponent
+    FinderArticlesModalComponent
   ],
   imports: [
     BrowserModule,

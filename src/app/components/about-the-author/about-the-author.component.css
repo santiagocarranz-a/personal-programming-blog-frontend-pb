@@ -14,7 +14,6 @@
     margin-bottom: 2em;
     border-radius: 50%;
     border: 3px solid var(--theme-ui-colors-background,#111216);
-    /* box-shadow: rgb(0 0 0 / 15%) 0px 15.619px 31.2381px; */
 }
 
 .container h1{
