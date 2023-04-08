@@ -6,6 +6,7 @@
     align-items: center;
     margin-bottom: 50px;
     transition: transform .3s;
+    cursor: pointer;
 }
 
 .container-data:hover{
@@ -14,8 +15,9 @@
 }
 
 .container-data img{
-    height: 220px;
+    height: 280px;
     box-shadow: rgb(0 0 0 / 30%) 0px 30px 60px -10px, rgb(0 0 0 / 33%) 0px 18px 36px -18px;
+    object-fit:cover;
 }
 
 .container-data-text h2{

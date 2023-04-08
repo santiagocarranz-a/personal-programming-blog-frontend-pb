@@ -8,11 +8,13 @@ import { ArticleService } from 'src/app/shared/services/article.service';
   styleUrls: ['./list-of-articles.component.css']
 })
 export class ListOfArticlesComponent implements OnInit{
-  itemNumber!:Array<Object>
+  dataArticle!:Array<Object>
 
-  constructor(public cssService: ArticleViewChangeService , public article:ArticleService){}
+  constructor(public cssService: ArticleViewChangeService , public Article:ArticleService){}
 
   ngOnInit(): void {
-    this.itemNumber = this.article.itemNumber
+    this.Article.getArticleInfo().subscribe(data=>{
+      this.dataArticle = data
+    })
   }
 }

@@ -9,7 +9,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class FinderArticlesModalComponent implements OnInit{
   showModal = false;
-  itemNumber!:Array<Object>
+  dataArticle!:Array<Object>
   responsiveSizes={
     xSmall: false,
     small: false,
@@ -17,10 +17,12 @@ export class FinderArticlesModalComponent implements OnInit{
     large: false
   }
 
-  constructor(public article:ArticleService, private ResponsiveService:ResponsiveService){
-    this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
-      this.responsiveSizes = responsiveSizes;
-    });
+  constructor(
+    private ResponsiveService:ResponsiveService,
+    public Article:ArticleService){
+      this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
+        this.responsiveSizes = responsiveSizes;
+      });
   }
 
   // get classes for responsive design
@@ -28,14 +30,22 @@ export class FinderArticlesModalComponent implements OnInit{
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }
 
+  getArticles(){
+    if(!this.dataArticle)
+    this.Article.getArticleInfo().subscribe(data => {
+      this.dataArticle = data
+    });
+  }
+
   openModal() {
     this.showModal = !this.showModal;
     document.body.style.overflowY = 'hidden';
     document.body.style.paddingRight = '14px';
+    this.getArticles()
   }
   
   closeModal(event: any) {
-    if (event.target.classList.contains('backdrop')) {
+    if (event.target.classList.contains('backdrop')){
       this.showModal = false;
       document.body.style.overflowY = 'scroll';
       document.body.style.paddingRight = '0px';
@@ -43,7 +53,6 @@ export class FinderArticlesModalComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.itemNumber = this.article.itemNumber
   }
 
 }

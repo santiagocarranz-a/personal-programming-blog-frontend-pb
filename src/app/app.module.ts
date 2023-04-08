@@ -17,6 +17,7 @@ import { AboutTheAuthorComponent } from './components/about-the-author/about-the
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NetworkIconsComponent } from './components/network-icons/network-icons.component';
 import { FinderArticlesModalComponent } from './components/finder-articles-modal/finder-articles-modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FinderArticlesModalComponent } from './components/finder-articles-modal
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

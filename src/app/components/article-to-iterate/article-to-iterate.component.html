@@ -1,10 +1,10 @@
-<div class="container" >
-    <a routerLink="/article:1" [ngStyle]="cssService.cssChildPropertiesData" [ngClass]="stylesForMoreArticlesData" class="container-data" [ngClass]="getClasses()">
-        <img src="./../../../assets/images/imagen-article2.png" alt="" >
+<div class="container" (click)="navigateToArticle(dataArticle.url_article)">
+    <a [ngStyle]="cssService.cssChildPropertiesData" [ngClass]="stylesForMoreArticlesData" class="container-data" [ngClass]="getClasses()">
+        <img src={{dataArticle.hero_image}} alt="" >
         <div [ngStyle]="cssService.cssChildPropertiesDataText " [ngClass]="stylesForMoreArticlesDataText" class="container-data-text" [ngClass]="getClasses()">
-            <h2 [ngClass]="getClasses()">{{articleData.title}}</h2>
-            <h3>{{articleData.data}}</h3>
-            <p>{{articleData.date}}</p>
+            <h2 [ngClass]="getClasses()">{{dataArticle.title}}</h2>
+            <h3>{{dataArticle.description}}</h3>
+            <p>{{dataArticle.date}} · {{dataArticle.read_time}}</p>
         </div>
     </a>
 </div>

@@ -1,5 +1,5 @@
 <div [ngStyle]="cssService.cssParentProperties" class="container">
-  <div *ngFor="let item of itemNumber">
-    <app-article-to-iterate [articleData]="item"></app-article-to-iterate>
+  <div *ngFor="let item of dataArticle">
+    <app-article-to-iterate [dataArticle]="item"></app-article-to-iterate>
   </div>
 </div>

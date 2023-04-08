@@ -4,12 +4,6 @@
     margin: 0 auto;
 }
 
-.container{
-}
-
-.more-articles{
-}
-
 .more-articles-text{
     
     padding: 5em 2.5em 5em;
@@ -18,7 +12,7 @@
 }
 
 .more-articles h3{
-    opacity: 0.25;
+    color:var(--text-second);
     padding-right: 0.5em;
 }
 

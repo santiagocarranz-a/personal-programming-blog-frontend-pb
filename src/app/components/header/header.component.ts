@@ -4,7 +4,8 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  
 })
 export class HeaderComponent implements OnInit{
   iconModeTheme!:boolean

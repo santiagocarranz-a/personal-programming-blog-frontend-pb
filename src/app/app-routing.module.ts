@@ -11,7 +11,7 @@ const routes: Routes = [
     component:HomePageComponent
   },
   {
-    path:'article:1',
+    path:'article/:url_article',
     component:ArticlePageComponent
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: "reload"} )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

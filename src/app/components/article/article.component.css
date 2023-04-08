@@ -67,6 +67,25 @@
     max-width: 749px;
 }
 
+.list{
+    padding: 0 1em 0;
+    margin: 1em 0 1em;
+    background-color: var(--bkg-list);
+}
+
+.list h3{
+    font-size: 24px;
+    font-weight:700;
+    line-height:42.656px;
+    font-family: var(--tipo-secondary);
+    padding-top: .7em;
+    padding-bottom: .7em;
+}
+
+.list .items{
+    color: var(--bkg-list-span-h3);
+}
+
 .article-info h2{
     font-size: 32px;
     font-weight:700;
@@ -92,81 +111,88 @@
 }
 
 
-
 /* STYLES FOR MEDIUM RESPONSIVE VIEW */
-.container-presentation.medium{
-    padding-left: 53px;
+@media only screen and (min-width: 960px) and (max-width: 1279.98px) {
+    .container-presentation{
+        padding-left: 53px;
+    }
 }
-
 
 /* STYLES FOR SMALL RESPONSIVE VIEW */
-.container-presentation.small{
-    padding: 0 2.5rem;
-}
+@media only screen and (min-width: 600px) and (max-width: 959.98px) {
+    .container-presentation{
+        padding: 0 2.5rem;
+    }
 
-.container-presentation h1.small{
-    font-size: 38px;
-    line-height: 1.2;
-    text-align: center;
-}
+    .container-presentation h1{
+        font-size: 38px;
+        line-height: 1.2;
+        text-align: center;
+    }
 
-.author-and-date.small{
-    flex-direction: column;
-    align-items: center;
-}
+    .author-and-date{
+        flex-direction: column;
+        align-items: center;
+    }
 
-.author-and-date p.small{
-    position: relative;
-    left: .3em;
-}
+    .author-and-date p{
+        position: relative;
+    }
 
-.author-and-date span.small{
-    display: none;
-}
+    .author-and-date span{
+        display: none;
+    }
 
-.article-info h2.small{
-    padding-top: 0.4em
-}
+    .article-info h2{
+        padding-top: 0.4em
+    }
 
-.article-info p.small{
-    padding-bottom: 0.5em;
+    .article-info p{
+        padding-bottom: 0.5em;
+    }
 }
-
 
 /* STYLES FOR XSMALL RESPONSIVE VIEW */
-.container-presentation.xSmall{
-    padding: 0 2.5rem;
-}
+@media only screen and (min-width: 0px) and (max-width: 599.98px) {
+    .container-presentation{
+        margin: 3em auto;
+        padding: 0 2.5rem;
+    }
 
-.container-presentation h1.xSmall{
-    font-size: 32px;
-    margin-bottom: 20px;
-    text-align: center;
-}
+    .container-presentation h1{
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-.author-and-date.xSmall{
-    flex-direction: column;
-    align-items: center;
-}
+    .author-and-date{
+        flex-direction: column;
+        align-items: center;
+    }
 
-.author-and-date p.xSmall{
-    position: relative;
-    left: .3em;
-}
+    .author-and-date p{
+        position: relative;
+       
+    }
 
-.author-and-date span.xSmall{
-    display: none;
-}
+    .author-and-date span{
+        display: none;
+    }
 
-.article-info.xSmall{
-    margin-top: 3em;
-    padding: 0 2.5rem;
-}
+    .author-and-date > p{
+        text-align: center;
+    }
 
-.article-info h2.xSmall{
-    padding-top: 0.6em
-}
+    .article-info{
+        margin-top: 3em;
+        padding: 0 2.5rem;
+    }
 
-.article-info p.xSmall{
-    padding-bottom: 0.7em;
+    .article-info h2{
+        padding-top: 0.6em
+    }
+
+    .article-info p{
+        padding-bottom: 0.7em;
+    }
 }

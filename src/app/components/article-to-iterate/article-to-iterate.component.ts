@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleViewChangeService } from 'src/app/shared/services/article-view-change.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
@@ -8,7 +9,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
   styleUrls: ['./article-to-iterate.component.css']
 })
 export class ArticleToIterateComponent {
-  @Input() articleData:any
+  @Input() dataArticle:any
   @Input() stylesForMoreArticlesData:any
   @Input() stylesForMoreArticlesDataText:any
 
@@ -19,7 +20,12 @@ export class ArticleToIterateComponent {
     large: false
   }
 
-  constructor(public cssService: ArticleViewChangeService, private ResponsiveService:ResponsiveService){
+  constructor(
+    public cssService: ArticleViewChangeService,
+    private ResponsiveService:ResponsiveService,
+    private router:Router,
+    private route: ActivatedRoute){
+
     this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
       this.responsiveSizes = responsiveSizes;
     });
@@ -28,5 +34,9 @@ export class ArticleToIterateComponent {
   // get classes for responsive design
   getClasses() {
     return this.ResponsiveService.getClasses(this.responsiveSizes);
+  }
+
+  navigateToArticle(url_article:any){
+    this.router.navigate(['article' + url_article])
   }
 }

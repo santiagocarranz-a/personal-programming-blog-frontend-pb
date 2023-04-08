@@ -1,33 +1,40 @@
-import { Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewEncapsulation} from '@angular/core';
 import { ArticleService } from 'src/app/shared/services/article.service';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ArticleComponent implements OnInit{
-  itemNumber!:Array<Object>
-  responsiveSizes={
-    xSmall: false,
-    small: false,
-    medium: false,
-    large: false
+export class ArticleComponent implements AfterViewInit{
+  articleHtml!:SafeHtml;
+  aElement: ElementRef | null = null;
+  urlArticle: any = this.route.snapshot.paramMap.get('url_article');
+  constructor(
+    public  Article:ArticleService,
+    private sanitizer:DomSanitizer,
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private route: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef){
   }
 
-  constructor(public Article:ArticleService, private ResponsiveService:ResponsiveService){
-    this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
-      this.responsiveSizes = responsiveSizes;
+  ngAfterViewInit() {}
+
+  getArticleHtml(){
+    this.route.paramMap.subscribe(params => {
+      let paramMapUrl = params.get('url_article')
+      this.Article.getArticle(paramMapUrl!).subscribe(data => {
+        this.articleHtml = this.sanitizer.bypassSecurityTrustHtml(data.article);
+      });
     });
   }
 
-  // get classes for responsive design
-  getClasses() {
-    return this.ResponsiveService.getClasses(this.responsiveSizes);
-  }
-  
-  ngOnInit(): void {
-    this.itemNumber = this.Article.itemNumber
+  ngOnInit() {
+    this.getArticleHtml()
   }
 }

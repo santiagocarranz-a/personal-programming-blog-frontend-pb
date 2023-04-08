@@ -1,42 +1,43 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  itemNumber = [
-    {
-      title:'Angular: Manejo de la asyncronia con Observables',
-      data:'¿Que relación tienen Async, las Promesas y los Observables?',
-      date:'January 16th, 2023  · 1 min read'
-    },
-    {
-      title:'Titulo 2asdasdasd',
-      data:'Data2dasdasd',
-      date:'January 16th, 2023  · 1 min read'
-    },
-    {
-      title:'Titulo 3',
-      data:'Data3',
-      date:'January 16th, 2023  · 1 min read'
-    },
-    {
-      title:'Titulo 4',
-      data:'Data4',
-      date:'January 16th, 2023  · 1 min read'
-    },
-    {
-      title:'Titulo 5',
-      data:'Data5',
-      date:'January 16th, 2023  · 1 min read'
-    },
-    {
-      title:'Titulo 6',
-      data:'Data6',
-      date:'January 16th, 2023  · 1 min read'
-    },
-  ];
+  constructor(private http: HttpClient) { }
+
+  itemNumber = []
+
+  getArticles(): Observable <any> {
+    //return this.http.get('https://server-personal-programming-blog-production.up.railway.app/articles').pipe(
+      return this.http.get('http://localhost:3000/articles').pipe(
+      map(response =>{
+        return response
+      })
+    )
+  }
   
-  constructor() { }
+  getArticle(url:string): Observable <any> {
+    //return this.http.get(`https://server-personal-programming-blog-production.up.railway.app/articles/${id}`).pipe(
+      return this.http.get(`http://localhost:3000/articles/${url}`).pipe(
+      map(response =>{
+        return response
+      })
+    )
+  }
+
+  getArticleInfo(): Observable <any> {
+    //return this.http.get(`https://server-personal-programming-blog-production.up.railway.app/articles`).pipe(
+      return this.http.get(`http://localhost:3000/articlesInfo`).pipe(
+      map(response =>{
+        return response
+      })
+    )
+  }
+  
+  
 }
