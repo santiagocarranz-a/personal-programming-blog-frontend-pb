@@ -1,5 +1,11 @@
-<div [ngStyle]="cssService.cssParentProperties" class="container">
-  <div *ngFor="let item of dataArticle">
-    <app-article-to-iterate [dataArticle]="item"></app-article-to-iterate>
-  </div>
+<div *ngIf="showSpinner else article " class="spinner-container">
+  <div class="spinner"></div>
 </div>
+
+<ng-template #article>
+  <div [ngStyle]="cssService.cssParentProperties" class="container">
+    <div *ngFor="let item of dataArticle">
+      <app-article-to-iterate [dataArticle]="item"></app-article-to-iterate>
+    </div>
+  </div>
+</ng-template>

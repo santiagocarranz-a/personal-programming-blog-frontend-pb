@@ -22,7 +22,7 @@ export class ArticleService {
   }
   
   getArticle(url:string): Observable <any> {
-    //return this.http.get(`https://server-personal-programming-blog-production.up.railway.app/articles/${id}`).pipe(
+    //return this.http.get(`https://server-personal-programming-blog-production.up.railway.app/articles/${url}`).pipe(
       return this.http.get(`http://localhost:3000/articles/${url}`).pipe(
       map(response =>{
         return response

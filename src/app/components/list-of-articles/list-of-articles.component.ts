@@ -9,12 +9,22 @@ import { ArticleService } from 'src/app/shared/services/article.service';
 })
 export class ListOfArticlesComponent implements OnInit{
   dataArticle!:Array<Object>
+  showSpinner:boolean = true
 
-  constructor(public cssService: ArticleViewChangeService , public Article:ArticleService){}
+  constructor(
+    public cssService: ArticleViewChangeService,
+    public Article:ArticleService){}
 
-  ngOnInit(): void {
+  getArticles(){
     this.Article.getArticleInfo().subscribe(data=>{
       this.dataArticle = data
+      if(typeof this.dataArticle == "object"){
+        this.showSpinner= false
+      }
     })
+  }
+
+  ngOnInit(): void {
+    this.getArticles()
   }
 }

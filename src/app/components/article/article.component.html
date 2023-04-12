@@ -1,1 +1,7 @@
-<div [innerHTML]="articleHtml"></div>
+<div *ngIf="showSpinner else article " class="spinner-container">
+    <div class="spinner"></div>
+</div>
+
+<ng-template #article>
+    <div [innerHTML]="_articleHtml"></div>
+</ng-template>

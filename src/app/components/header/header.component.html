@@ -1,5 +1,5 @@
 <div class="containerHeader"  >
-    <a href="" class="container-author" title="Navegar al Home">
+    <a routerLink="/" class="container-author" title="Navegar al Home">
         <div class="logo">CS</div>
     </a>
     <div *ngIf="!responsiveSizes.xSmall; else hamburger" class="container-icons" [ngClass]="getClasses()">

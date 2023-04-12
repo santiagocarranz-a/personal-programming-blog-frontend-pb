@@ -44,8 +44,8 @@ export class ArticlePageComponent implements OnInit{
   }
 
   enableBodyScrolling(){
-    document.body.style.overflowY = 'scroll';
-    document.body.style.paddingRight = '0px';
+      document.body.style.overflowY = 'scroll';
+      document.body.style.paddingRight = '0px';
   }
 
   ngOnInit(): void {
