@@ -1,3 +1,5 @@
-<div class="aligned container">
-    <p>not-found-page works!</p>
+<div class="aligned container" [ngClass]="getClasses()">
+    <img class="image" src="../../../assets/images/not-found-page.png" alt="">
+    <h1 class="title" [ngClass]="getClasses()">Disculpa, no hay contenido disponible en esta ubicación del sitio.</h1>
+    <button class="button" routerLink="/">Volver al Home</button>
 </div>

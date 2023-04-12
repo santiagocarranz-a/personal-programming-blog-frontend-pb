@@ -27,6 +27,8 @@
 }
 
 .author-img{
+    min-height: 60px;
+    min-width: 60px;
     position: relative;
     bottom: .3em;
     margin: 0px 26px 10px 0px;
@@ -43,7 +45,7 @@
     line-height: 1.45;
     color: var(--text-second);
     max-width: 458px;
-
+    padding-top: .2em;
 }
 
 
@@ -57,12 +59,12 @@
     margin-right: 30px;
 
 }
-.button1{
+.buttonTile{
     margin-right: 30px;
 }
 
-.button1,
-.button2{
+.buttonTile,
+.buttonRow{
    position: relative;
    display: flex;
    -webkit-box-align: center;
@@ -76,13 +78,13 @@
    transition: background 0.25s ease 0s;
 }
 
-.button1:hover,
-.button2:hover{
+.buttonTile:hover,
+.buttonRow:hover{
     background:var(--icon-hover);
 }
 
-.button1 svg,
-.button2 svg{
+.buttonTile svg,
+.buttonRow svg{
     fill:var(--color-icon);
     transition: opacity 0.2s ease;
 }
@@ -142,4 +144,9 @@
 
 .change-view-articles.xSmall{
     margin: 0 auto;
+}
+
+.buttonTile.xSmall,
+.buttonRow.xSmall{
+    display: none;
 }

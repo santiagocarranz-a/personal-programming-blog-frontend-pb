@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation} from '@angular/core';
 import { ArticleService } from 'src/app/shared/services/article.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-article',
@@ -26,8 +27,22 @@ export class ArticleComponent {
       this.showSpinner = true
       let paramMapUrl = params.get('url_article')
 
-      this.Article.getArticle(paramMapUrl!).subscribe(data => {
+    this.Article.getArticle(paramMapUrl!)
+      .pipe(
+        catchError(error =>{
+          if (error.status === 404) {
+            console.log('Error 404: artículo no encontrado');
+            this.showSpinner = false
+            const navigationExtras: NavigationExtras = {skipLocationChange: true}
+            this.router.navigate(['**'], navigationExtras)
+          }
+          return of(null);
+        })
+      )
+      .subscribe(data => {
+        if (data) {
         this._articleHtml = this.sanitizer.bypassSecurityTrustHtml(data.article);
+        }
         if(typeof this._articleHtml == "object"){
           this.showSpinner = false
         }

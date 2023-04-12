@@ -20,8 +20,7 @@ export class AboutTheAuthorComponent {
     });
   }
 
-   // get classes for responsive design
-   getClasses() {
+   getClasses() { // get classes for responsive design
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }
 }

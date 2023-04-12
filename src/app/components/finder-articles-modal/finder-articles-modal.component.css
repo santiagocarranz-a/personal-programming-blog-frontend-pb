@@ -1,4 +1,18 @@
-/* Icon-search section */
+/* Search section */
+.container-text-search{
+  display: flex;
+  align-items: center;
+  border: .2em solid var(--color-link);
+  border-radius: 2em;
+  padding:0 1em;
+}
+
+.container-text-search:hover{
+  cursor: pointer;
+  color: #000000;
+  background:var(--color-link);
+}
+
 .container-icon{
   background-color: var(--backgroundBlack);
   position: relative;
@@ -15,7 +29,7 @@
   cursor: pointer;
 }
 
-.container-icon:hover{
+.container-iconFinder:hover{
   background:var(--icon-hover);
 }
 
@@ -69,6 +83,10 @@
   padding: 1em;
   border-radius: 2em;
   font-size: 14px;
+}
+
+.search-form input:focus{
+  outline-color: var(--color-link);
 }
 
 .articles{
