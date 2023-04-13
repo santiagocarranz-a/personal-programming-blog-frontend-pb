@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ArticleInfo } from 'src/app/shared/interfaces/articleInterface';
 import { ArticleService } from 'src/app/shared/services/article.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
@@ -10,7 +11,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 })
 export class ArticlePageComponent implements OnInit{
-  dataArticle!:Array<Object>
+  dataArticle:ArticleInfo[] = [];
   stylesForMoreArticlesData = 'data';
   stylesForMoreArticlesDataText = 'dataText';
   responsiveSizes={

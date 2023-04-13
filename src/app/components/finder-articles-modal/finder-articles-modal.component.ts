@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleInfo } from 'src/app/shared/interfaces/articleInterface';
 import { ArticleService } from 'src/app/shared/services/article.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
@@ -9,7 +10,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class FinderArticlesModalComponent implements OnInit{
   showModal = false;
-  dataArticle!:Array<Object>
+  dataArticle:ArticleInfo[] = [];
   responsiveSizes={
     xSmall: false,
     small: false,
@@ -30,10 +31,12 @@ export class FinderArticlesModalComponent implements OnInit{
     return this.ResponsiveService.getClasses(this.responsiveSizes);
   }
 
-  getArticles(){
-    if(!this.dataArticle)
-    this.Article.getArticleInfo().subscribe(data => {
+  getArticles(keyword:any){
+    //  if(!this.dataArticle)
+     this.Article.getArticleKeyword(keyword).subscribe(data => {
+//manejar el error si el articulo no existe 
       this.dataArticle = data
+      console.log(data)
     });
   }
 
@@ -41,7 +44,6 @@ export class FinderArticlesModalComponent implements OnInit{
     this.showModal = !this.showModal;
     document.body.style.overflowY = 'hidden';
     document.body.style.paddingRight = '14px';
-    this.getArticles()
   }
   
   closeModal(event: any) {

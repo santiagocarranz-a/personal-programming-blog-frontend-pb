@@ -23,8 +23,9 @@
     <div class="backdrop" *ngIf="showModal" (click)="closeModal($event)">
       <div class="modal">
           <form action="/" method="get" class="search-form" [ngClass]="getClasses()" >
-              <input type="text" placeholder="Buscar articulo..." >
-          </form>
+              <input type="text" #contentKeyword placeholder="Buscar articulo..." >
+              <div (click)="getArticles(contentKeyword.value)">buscar</div>
+            </form>
           <div class="articles" [ngClass]="getClasses()">
               <div *ngFor="let item of dataArticle">
                 <app-article-to-iterate

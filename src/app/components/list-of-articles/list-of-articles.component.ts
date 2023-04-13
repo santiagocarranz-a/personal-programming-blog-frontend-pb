@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ArticleInfo } from 'src/app/shared/interfaces/articleInterface';
 import { ArticleViewChangeService } from 'src/app/shared/services/article-view-change.service';
 import { ArticleService } from 'src/app/shared/services/article.service';
 
@@ -8,7 +9,7 @@ import { ArticleService } from 'src/app/shared/services/article.service';
   styleUrls: ['./list-of-articles.component.css']
 })
 export class ListOfArticlesComponent implements OnInit{
-  dataArticle!:Array<Object>
+  dataArticle:ArticleInfo[] = [];
   showSpinner:boolean = true
 
   constructor(
