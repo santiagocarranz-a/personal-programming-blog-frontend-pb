@@ -69,7 +69,7 @@ export class FinderArticlesModalComponent{
         );
     }
     
-    // remove element when input is empty
+    // remove articles when input is empty
     if (this.articleSearchInput){
       if (!this.articleSearchInput.nativeElement.value && document!.querySelector('.article')) {
         this.stopNgDoCheckScroll = 0
