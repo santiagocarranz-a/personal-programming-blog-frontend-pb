@@ -1,4 +1,4 @@
-<div class="container">
+<div class="parent-container">
     <div *ngIf="responsiveSizes.xSmall else iconFinder"  class="container-text-search" (click)="openModal()">
       <div>Buscar articulo</div>
       <div class="container-icon">
@@ -22,17 +22,20 @@
 
     <div class="backdrop" *ngIf="showModal" (click)="closeModal($event)">
       <div class="modal">
-          <form action="/" method="get" class="search-form" [ngClass]="getClasses()" >
-              <input type="text" #contentKeyword placeholder="Buscar articulo..." >
-              <div (click)="getArticles(contentKeyword.value)">buscar</div>
-            </form>
-          <div class="articles" [ngClass]="getClasses()">
-              <div *ngFor="let item of dataArticle">
-                <app-article-to-iterate
+          <form action="/" method="get" class="search-form" [ngClass]="getClasses()">
+              <input type="text" #articleSearchInput placeholder="Buscar articulo..." >
+          </form>
+          <div *ngIf="showErrorMessage" class="articlesNotResult">No se encontraron resultados para los términos de búsqueda ingresados.</div>
+          <div *ngIf="showSpinner" class="spinner-container">
+            <div class="spinner"></div>
+          </div>
+          <div *ngIf="!showErrorMessage" class="articles" [ngStyle]="scrollModal === true ? {'overflow-y': 'scroll'} : {'overflow-y': 'hidden'}" [ngClass]="getClasses()" >
+              <div *ngFor="let item of (article$ | async) as dataArticle" class="article">
+                <app-article-to-iterate 
                 [dataArticle]="item"
                 ></app-article-to-iterate>
               </div>
-          </div>
-      </div>
+          </div>    
+        </div>
     </div>
 </div>

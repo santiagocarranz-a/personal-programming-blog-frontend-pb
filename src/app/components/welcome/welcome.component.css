@@ -1,4 +1,4 @@
-.container{
+.parent-container{
     margin-bottom: 4em;
 }
 
@@ -27,8 +27,8 @@
 }
 
 .author-img{
-    min-height: 60px;
-    min-width: 60px;
+    height: 60px;
+    width: 60px;
     position: relative;
     bottom: .3em;
     margin: 0px 26px 10px 0px;
@@ -106,7 +106,7 @@
 }
 
 /* STYLES FOR SMALL RESPONSIVE VIEW */
-.container.small{
+.parent-container.small{
     margin-bottom: 3em;
 }
 
@@ -126,7 +126,7 @@
 }
 
 /* STYLES FOR XSMALL RESPONSIVE VIEW */
-.container.xSmall{
+.parent-container.xSmall{
     margin-bottom: 2em;
 }
 

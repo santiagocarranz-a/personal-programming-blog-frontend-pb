@@ -1,4 +1,4 @@
-.container{
+.parent-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     min-height: 100vh;
 }
 
-.container img{
+.parent-container img{
     position: relative;
     height: 164px;
     width: 164px;
@@ -15,13 +15,13 @@
     border: 3px solid var(--theme-ui-colors-background,#111216);
 }
 
-.container h1{
+.parent-container h1{
     font-size: 38px;
     margin-bottom: 1em;
     font-weight: 600;
 }
 
-.container p{
+.parent-container p{
     max-width: 450px;
     color: var(--text-second);
     font-size: 18px;
@@ -34,11 +34,11 @@
 }
 
 /* STYLES FOR XSMALL RESPONSIVE VIEW */
-.container.xSmall{
+.parent-container.xSmall{
     padding-top: 24%;
 }
 
-.container h1.xSmall{
+.parent-container h1.xSmall{
     line-height: 1.1;
     text-align: center;
 }

@@ -82,7 +82,7 @@
   width: 100%;
   padding: 1em;
   border-radius: 2em;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .search-form input:focus{
@@ -95,7 +95,40 @@
   position: static;
   width: 100%;
   padding: 1em 2em;
-  overflow-y: scroll;
+  
+}
+
+.articlesNotResult{
+  max-width:87%;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.spinner-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.spinner{
+  border: 8px solid rgba(0, 0, 0, .1);
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border-left-color: var(--color-link) ;
+
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
 }
 
 /* Definimos estilos para la barra Scroll */

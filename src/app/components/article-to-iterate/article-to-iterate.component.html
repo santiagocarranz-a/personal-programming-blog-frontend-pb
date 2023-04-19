@@ -1,4 +1,4 @@
-<div class="container" (click)="navigateToArticle(dataArticle.url_article)">
+<div class="parent-container" (click)="navigateToArticle(dataArticle.url_article)">
     <a [ngStyle]="cssService.cssChildPropertiesData" [ngClass]="stylesForMoreArticlesData" class="container-data" [ngClass]="getClasses()">
         <img src={{dataArticle.hero_image}} alt="" >
         <div [ngStyle]="cssService.cssChildPropertiesDataText " [ngClass]="stylesForMoreArticlesDataText" class="container-data-text" [ngClass]="getClasses()">
