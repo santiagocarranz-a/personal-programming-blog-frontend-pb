@@ -18,6 +18,7 @@ export class FinderArticlesModalComponent{
   dataArticle:ArticlesKeyword[] = [];
   article$!: Observable<ArticlesKeyword[]>
   stopNgDoCheckErrorMessageOff:number = 0
+  stopNgDoCheckFocusInput:number = 0
   stopNgDoCheckGetArticle:number = 0
   stopNgDoCheckScroll:number = 0
   responsiveSizes={
@@ -94,10 +95,19 @@ export class FinderArticlesModalComponent{
         }
       })
     }
+
+    // add focus to input 
+    if(document!.querySelector(".search-form input") && this.stopNgDoCheckFocusInput < 1){
+      this.stopNgDoCheckFocusInput = 2
+      let input = document.querySelector(".search-form input") as HTMLElement;
+      input.focus()
+    }
   }
+
 
   openModal() {
     this.stopNgDoCheckErrorMessageOff = 0
+    this.stopNgDoCheckFocusInput = 0
     this.stopNgDoCheckGetArticle = 0
     this.stopNgDoCheckScroll = 0
     this.showModal = !this.showModal;

@@ -7,19 +7,24 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
+  themeColorMode = localStorage.getItem('theme-color-mode');
+  srcSpinner:string = ""
   title = 'blog-personal-de-programacion';
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Scroll to the top of the site on every route change
+    // control spinner on site load
+    this.srcSpinner = this.themeColorMode === "white-theme" ? "../assets/images/spinnerStartWhite.gif" : "../assets/images/spinnerStartBlack.gif";
+    window.onload = () => document.querySelector(".spinnerStart")?.remove();
+
+    // scroll to the top of the site on every route change
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0);
     }});
 
-    // Apply styles for "day mode"
-    const theme = localStorage.getItem('theme-color-mode');
-    if (theme === 'white-theme') {
+    // apply styles for "day mode"
+    if (this.themeColorMode === 'white-theme') {
       document.body.classList.add('white-theme');
     }
   }
