@@ -27,28 +27,29 @@ export class ArticleComponent {
       this.showSpinner = true
       let paramMapUrl = params.get('url_article')
 
-    this.Article.getArticle(paramMapUrl!)
-      .pipe(
-        catchError(error =>{
-          if (error.status === 404) {
-            console.log('Error 404: artículo no encontrado');
-            this.showSpinner = false
-            const navigationExtras: NavigationExtras = {skipLocationChange: true}
-            this.router.navigate(['**'], navigationExtras)
+      this.Article.getArticle(paramMapUrl!)
+        .pipe(
+          catchError(error =>{
+            if (error.status === 404) {
+              console.log('Error 404: artículo no encontrado');
+              this.showSpinner = false
+              const navigationExtras: NavigationExtras = {skipLocationChange: true}
+              this.router.navigate(['**'], navigationExtras)
+            }
+            return of(null);
+          })
+        )
+        .subscribe(data => {
+          if (data) {
+          this._articleHtml = this.sanitizer.bypassSecurityTrustHtml(data.article);
           }
-          return of(null);
-        })
-      )
-      .subscribe(data => {
-        if (data) {
-        this._articleHtml = this.sanitizer.bypassSecurityTrustHtml(data.article);
-        }
-        if(typeof this._articleHtml == "object"){
-          this.showSpinner = false
-        }
-        this.stopNgDoCheck = 0
-      });
-    });
+          if(typeof this._articleHtml == "object"){
+            this.showSpinner = false
+          }
+          this.stopNgDoCheck = 0
+        });
+      }
+    );
   }
 
   ngOnInit() {

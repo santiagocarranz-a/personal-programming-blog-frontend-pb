@@ -2,8 +2,8 @@
     <a routerLink="/" class="container-author" title="Navegar al Home">
         <div class="logo">CS</div>
     </a>
-    <div *ngIf="!responsiveSizes.xSmall; else hamburger" class="container-icons" [ngClass]="getClasses()">
-        <div class="icon-author">
+    <div *ngIf="!responsiveSizes.xSmall || !toggleIconAuthor; else hamburger" class="container-icons" [ngClass]="getClasses()">
+        <div class="icon-author" *ngIf="toggleIconAuthor">
             <a routerLink="/author">
                 Sobre el autor
             </a>
@@ -21,9 +21,10 @@
             </div>
         </ng-template>
     </div>
+
     <!-- menu hamburguer -->
     <ng-template #hamburger>
-        <div class="hamburger-click" >
+        <div class="hamburger-click">
             <div (click)="openHamburger()">
                 <svg width="46px" height="46px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 18L20 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><path d="M4 12L20 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><path d="M4 6L20 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
@@ -48,7 +49,7 @@
                             </ng-template>
                         </div>
                         <div class="hamburger-icon-author">
-                            <a class="close" routerLink="/author" (click)="toggleShowMenuHamburger($event)">
+                            <a class="close" routerLink="/author" (click)="toggleShowMenuHamburger($event)" >
                                 Sobre el autor
                             </a>
                         </div>

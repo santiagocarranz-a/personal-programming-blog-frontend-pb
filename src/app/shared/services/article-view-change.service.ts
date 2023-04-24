@@ -37,7 +37,6 @@ export class ArticleViewChangeService {
     'reset':{}
   }
 
-
   updateTileCssProperties(){
     this.cssParentProperties = this.viewTile.componentParent;
     this.cssChildPropertiesData = this.viewTile.componentChild.containerData;

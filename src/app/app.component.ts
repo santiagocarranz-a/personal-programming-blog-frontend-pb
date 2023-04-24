@@ -9,7 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent  implements OnInit{
   themeColorMode = localStorage.getItem('theme-color-mode');
   srcSpinner:string = ""
-  title = 'blog-personal-de-programacion';
+  title = 'Santiago Carranza - Blog de programación.';
   constructor(private router: Router) {}
 
   ngOnInit() {

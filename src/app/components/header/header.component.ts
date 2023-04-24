@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class HeaderComponent implements OnInit{
   iconModeTheme!:boolean
+  toggleIconAuthor:boolean = true
+  currentUrl!:string 
   hamburgerValue=true
   responsiveSizes={
     xSmall: false,
@@ -17,10 +20,22 @@ export class HeaderComponent implements OnInit{
     large: false
   }
 
-  constructor(private ResponsiveService:ResponsiveService){
+  constructor(
+    private ResponsiveService:ResponsiveService,
+    public router:Router){
     this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
       this.responsiveSizes = responsiveSizes;
     });
+  }
+
+  ngDoCheck() {
+    // remove "About me" link in "About me" section
+    if(this.router.url === "/author"){
+      this.currentUrl = this.router.url
+      this.toggleIconAuthor = false
+    }else{
+      this.toggleIconAuthor = true
+    }
   }
 
   ngOnInit(): void {
