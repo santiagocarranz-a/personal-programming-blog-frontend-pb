@@ -21,6 +21,7 @@ export class FinderArticlesModalComponent{
   stopNgDoCheckFocusInput:number = 0
   stopNgDoCheckGetArticle:number = 0
   stopNgDoCheckScroll:number = 0
+  stopNgDoCheckScrollOff:number = 0
   responsiveSizes={
     xSmall: false,
     small: false,
@@ -45,7 +46,7 @@ export class FinderArticlesModalComponent{
     if(this.showModal !== false && this.articleSearchInput !== undefined && this.stopNgDoCheckGetArticle < 1){
         this.stopNgDoCheckGetArticle = 2
         this.article$ = fromEvent<Event>(this.articleSearchInput.nativeElement, 'keyup').pipe(
-          map((event:Event) => {
+          map((event:Event) => { 
             const searchTerm = (event.target as HTMLInputElement).value;
             return searchTerm
           }),
@@ -57,12 +58,14 @@ export class FinderArticlesModalComponent{
               catchError((error) => {
                 if (error.status === 404) {
                   this.showErrorMessage = true;
+                  
                   console.log('Error 404: No se encontraron resultados para los términos de búsqueda ingresados.');
                   return of([]);
                 }
                 return throwError(() => error);
               }),
               finalize(() => {
+                this.scrollModal = true
                 this.showSpinner = false;
               })
             )
@@ -72,11 +75,12 @@ export class FinderArticlesModalComponent{
     
     // remove articles when input is empty
     if (this.articleSearchInput){
-      if (!this.articleSearchInput.nativeElement.value && document!.querySelector('.article')) {
+      if (!this.articleSearchInput.nativeElement.value ) {
         this.stopNgDoCheckScroll = 0
         this.scrollModal = false
         this.showSpinner = false
-        document!.querySelector('.article')?.remove()
+        const articles = document.querySelectorAll('.article');
+        articles.forEach(article => article.remove());
       }
     }
 
@@ -85,25 +89,32 @@ export class FinderArticlesModalComponent{
       this.stopNgDoCheckScroll = 2
       this.scrollModal = true
     }
+
+    // scroll modal - off
+    if(!document!.querySelector('.article') && this.stopNgDoCheckScrollOff < 1){
+      this.stopNgDoCheckScrollOff = 2
+      this.scrollModal = false
+    }
      
     // error message on dom - Off
-    if(document!.querySelector('.search-form input') && this.showErrorMessage === true && this.stopNgDoCheckErrorMessageOff < 1){
+    if(this.articleSearchInput && this.showErrorMessage === true && this.stopNgDoCheckErrorMessageOff < 1){
       this.stopNgDoCheckErrorMessageOff = 2
-      document!.querySelector('.search-form input')?.addEventListener("keydown",(e:any)=>{
-        if(e.key === 'Backspace') {
-          this.showErrorMessage = false;
-        }
+      document!.querySelector('.search-form input')?.addEventListener("keydown",()=>{
+        this.showErrorMessage = false;
       })
     }
 
     // add focus to input 
-    if(document!.querySelector(".search-form input") && this.stopNgDoCheckFocusInput < 1){
+    if(this.articleSearchInput && this.stopNgDoCheckFocusInput < 1){
       this.stopNgDoCheckFocusInput = 2
       let input = document.querySelector(".search-form input") as HTMLElement;
       input.focus()
     }
   }
 
+  preventDefaultInputKedownEnter(event:any){
+    event.preventDefault();
+  }
 
   openModal() {
     this.stopNgDoCheckErrorMessageOff = 0
@@ -116,7 +127,8 @@ export class FinderArticlesModalComponent{
   }
 
   closeModal(event: any) {
-    if (event.target.classList.contains('backdrop')){
+    if (event.target.classList.contains('backdrop') ||
+    event.target.classList.contains('close-modal-x')){
       this.showModal = false;
       this.scrollModal = false
       this.showErrorMessage = false;

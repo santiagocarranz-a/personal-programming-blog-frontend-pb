@@ -1,51 +1,89 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { Article, ArticleInfo, Articles, ArticlesKeyword } from '../interfaces/articleInterface';
+import { config } from 'src/environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
+  apiLocal:string = config.localHost
+  cachedArticleInfo$!: Observable<ArticleInfo[]>;
   
   constructor(private http: HttpClient) { }
 
   getArticles(): Observable <Articles[]> {
-    //return this.http.get<Articles[]>('https://server-personal-programming-blog-production.up.railway.app/articles').pipe(
-    return this.http.get<Articles[]>('http://localhost:3000/articles').pipe(
+    return this.http.get<Articles[]>(`${this.apiLocal}/articles`).pipe(
       map(response =>{
         return response
       })
     )
   }
+  
   
   getArticle(url:string): Observable <Article> {
-    return this.http.get<Article>(`https://server-personal-programming-blog-production.up.railway.app/articles/${url}`).pipe(
-    //return this.http.get<Article>(`http://localhost:3000/articles/${url}`).pipe(
+    return this.http.get<Article>(`${this.apiLocal}/articles/${url}`).pipe(
       map(response =>{
         return response
       })
     )
   }
 
-  getArticleKeyword(keyword:string): Observable <ArticlesKeyword[]> {
-    return this.http.get<ArticlesKeyword[]>(`https://server-personal-programming-blog-production.up.railway.app/articlesKeyword?keywords=${keyword}`).pipe(
-    //return this.http.get<ArticlesKeyword[]>(`http://localhost:3000/articlesKeyword?keywords=${keyword}`).pipe(
-      map(response =>{
-        return response
-      })
-    )
+  
+  getArticleKeyword(keyword: string): Observable<ArticlesKeyword[]> {
+    if (this.cachedArticleInfo$) {
+      return this.cachedArticleInfo$.pipe(
+        map((articles: ArticleInfo[]) => {
+          const filteredArticles: ArticlesKeyword[] = [];
+          const searchWords = keyword.toLowerCase().split(' ').filter(word => word !== '');
+          articles.forEach((article: ArticleInfo) => {
+            let found = false;
+            searchWords.forEach((word: string) => {
+              if (
+                article.title.toLowerCase().includes(word) ||
+                article.description.toLowerCase().includes(word) ||
+                article.tags.toLowerCase().includes(word)
+              ) {
+                found = true;
+                return;
+              }
+            });
+            if (found) {
+              filteredArticles.push({
+                id: article.id,
+                title: article.title,
+                description: article.description,
+                hero_image: article.hero_image,
+                date: article.date,
+                url_article: article.url_article,
+                tags: article.tags,
+                read_time: article.read_time,
+              });
+            }
+          });
+          if (filteredArticles.length <= 0) {
+            throw new HttpErrorResponse({ status: 404, statusText: "No se encontraron resultados para los términos de búsqueda ingresados." });
+          }
+          return filteredArticles ;
+        })
+      );
+    } else {
+      return this.http
+        .get<ArticlesKeyword[]>(`${this.apiLocal}/articlesKeyword?keywords=${keyword}`)
+        .pipe(map((response) => response));
+    }
   }
+  
 
   getArticleInfo(): Observable <ArticleInfo[]> {
-    return this.http.get<ArticleInfo[]>(`https://server-personal-programming-blog-production.up.railway.app/articles`).pipe(
-    //return this.http.get<ArticleInfo[]>(`http://localhost:3000/articlesInfo`).pipe(
-      map(response =>{
-        return response
-      })
-    )
+    if(!this.cachedArticleInfo$){
+      this.cachedArticleInfo$ = this.http.get<ArticleInfo[]>(`${this.apiLocal}/articlesInfo`).pipe(
+        map((response: ArticleInfo[]) => response),
+        shareReplay(1)
+      )
+    }
+    return this.cachedArticleInfo$;
   }
-  
-  
 }
