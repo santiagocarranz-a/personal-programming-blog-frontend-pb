@@ -10,12 +10,13 @@ import { config } from 'src/environment/environment';
 })
 export class ArticleService {
   apiLocal:string = config.localHost
+  api:string = config.api
   cachedArticleInfo$!: Observable<ArticleInfo[]>;
   
   constructor(private http: HttpClient) { }
 
   getArticles(): Observable <Articles[]> {
-    return this.http.get<Articles[]>(`${this.apiLocal}/articles`).pipe(
+    return this.http.get<Articles[]>(`${this.api}/articles`).pipe(
       map(response =>{
         return response
       })
@@ -24,7 +25,7 @@ export class ArticleService {
   
   
   getArticle(url:string): Observable <Article> {
-    return this.http.get<Article>(`${this.apiLocal}/articles/${url}`).pipe(
+    return this.http.get<Article>(`${this.api}/articles/${url}`).pipe(
       map(response =>{
         return response
       })
@@ -71,7 +72,7 @@ export class ArticleService {
       );
     } else {
       return this.http
-        .get<ArticlesKeyword[]>(`${this.apiLocal}/articlesKeyword?keywords=${keyword}`)
+        .get<ArticlesKeyword[]>(`${this.api}/articlesKeyword?keywords=${keyword}`)
         .pipe(map((response) => response));
     }
   }
@@ -79,7 +80,7 @@ export class ArticleService {
 
   getArticleInfo(): Observable <ArticleInfo[]> {
     if(!this.cachedArticleInfo$){
-      this.cachedArticleInfo$ = this.http.get<ArticleInfo[]>(`${this.apiLocal}/articlesInfo`).pipe(
+      this.cachedArticleInfo$ = this.http.get<ArticleInfo[]>(`${this.api}/articlesInfo`).pipe(
         map((response: ArticleInfo[]) => response),
         shareReplay(1)
       )
