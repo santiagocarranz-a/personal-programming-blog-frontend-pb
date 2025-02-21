@@ -5,7 +5,7 @@
     <div *ngIf="!responsiveSizes.xSmall || !toggleIconAuthor; else hamburger" class="container-icons" [ngClass]="getClasses()">
         <div class="icon-author" *ngIf="toggleIconAuthor">
             <a routerLink="/author">
-                Sobre el autor
+                Sobre mí
             </a>
         </div>
         <div *ngIf="!iconModeTheme ; else luna" class="icon-theme-mode icon-theme-mode-notHamburguer" (click)="toggleThemeMode()" title="Cambiar a modo día">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="hamburger-icon-author">
                             <a class="close" routerLink="/author" (click)="toggleShowMenuHamburger($event)" >
-                                Sobre el autor
+                                Sobre mí
                             </a>
                         </div>
                     </div>

@@ -14,8 +14,8 @@
     --color-link:#e9daac;
     --color-icon:#5b5858;
     --fontLilac: #6166DC;
-    --bkg-list:#183a42;
-    --bkg-list-span-h3:#da6623;
+    --bkg-list:#2e363a;
+    --bkg-list-span-h3:#d85905;
     /* Background Color */
     --bkg-color:#111216;
     --bkg-modal:#111216;
@@ -23,18 +23,18 @@
     --backgroundColorBlack: #111216;
     --backgroundColorWhite: #ffffff;
     /* Tipografía */
-    --tipo-primary: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+    --tipo-primary: Source Code Pro, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
     --tipo-secondary: Merriweather, Georgia, serif;;
     --tipo-third: "SF Pro Display", -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
 }
 
 /* Agregamos una clase para ser utilizada en el modo día */
 body.white-theme{
-    --bkg-color:#fff;
+    --bkg-color:#F2F2F2;
     --bkg-modal:#ffffffd2;
     --bkg-modal-input:#fffefe;
-    --text-color:#000000;
-    --color-link:#6166DC;
+    --text-color:#131313;
+    --color-link:#44469c;
     --color-icon:#666363;
     --text-second:#3a3a42;
     --text-third:#37373b;
