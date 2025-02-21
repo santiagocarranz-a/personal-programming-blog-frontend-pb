@@ -7,7 +7,7 @@
         <div class="author-data-container" [ngClass]="getClasses()">
             <div class="author-img">
                 <a routerLink="/author">
-                    <img src="../../../assets/images/img-40px.png" alt="author" width="60" height="60">
+                    <img [src]="imageSrc" alt="author" width="60" height="60">
                 </a>
             </div>
             <div class="author-data" [ngClass]="getClasses()">Actualmente vivo en Buenos Aires, Argentina. Soy desarrollador de software con especialización en tecnologías web.</div>

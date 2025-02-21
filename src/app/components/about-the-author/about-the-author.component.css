@@ -13,8 +13,8 @@ b, strong {
     height: 164px;
     width: 164px;
     margin-bottom: 2em;
-    border-radius: 50%;
-    border: 3px solid var(--theme-ui-colors-background,#111216);
+    /* border-radius: 50%; */
+    /* border: 3px solid var(--theme-ui-colors-background,#111216); */
 }
 
 .parent-container h1{

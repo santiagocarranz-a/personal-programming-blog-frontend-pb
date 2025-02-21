@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { CacheImageService } from './shared/services/cache-image.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent  implements OnInit{
   themeColorMode = localStorage.getItem('theme-color-mode');
   srcSpinner:string = ""
   title = 'Santiago Carranza - Blog de programación.';
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private cacheImageService: CacheImageService) {}
 
   ngOnInit() {
     // control spinner on site load
@@ -27,5 +30,7 @@ export class AppComponent  implements OnInit{
     if (this.themeColorMode === 'white-theme') {
       document.body.classList.add('white-theme');
     }
+
+    this.cacheImageService.cacheImage('../../../assets/images/author-200px.png');
   }
 }

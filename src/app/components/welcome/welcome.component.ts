@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { ArticleViewChangeService } from 'src/app/shared/services/article-view-change.service';
+import { CacheImageService } from 'src/app/shared/services/cache-image.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
@@ -18,10 +19,21 @@ export class WelcomeComponent {
     large: false
   }
 
-  constructor(public CssService:ArticleViewChangeService, private ResponsiveService:ResponsiveService){
+  imageSrc: string = '../../../assets/images/author-200px.png'; // Imagen por defecto
+  imageUrl: string = '../../../assets/images/author-200px.png'; // URL de la imagen
+
+  constructor(
+    public CssService:ArticleViewChangeService, 
+    private ResponsiveService:ResponsiveService,
+    private cacheImageService: CacheImageService){
     this.ResponsiveService.responsiveSizesSubject.subscribe(responsiveSizes => {
       this.responsiveSizes = responsiveSizes;
     });
+  }
+
+  async ngOnInit() {
+    const cachedImage = await this.cacheImageService.getCachedImage(this.imageUrl);
+    this.imageSrc = cachedImage ? cachedImage : this.imageUrl;
   }
 
   // get classes for responsive design
