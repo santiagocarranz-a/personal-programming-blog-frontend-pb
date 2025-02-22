@@ -18,7 +18,7 @@ export class ListOfArticlesComponent implements OnInit{
 
   getArticles(){
     this.Article.getArticleInfo().subscribe(data=>{
-      this.dataArticle = data
+      this.dataArticle = data.sort((a, b) => b.id - a.id);
       if(typeof this.dataArticle == "object"){
         this.showSpinner= false
       }
