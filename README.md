@@ -4,16 +4,21 @@
 
 <h1 align="center">Personal programming blog</h1>
 <br>
-Este es un sitio web de tipo blog, donde comparto mis conocimientos y experiencias en el mundo del desarrollo web, y documentando lo que voy aprendiendo a lo largo del camino. 
+
+Este blog nació como un proyecto para profundizar en el desarrollo web, aplicando tecnologías como **Angular**, **TypeScript**, **RxJS**, **Node.js** y **MySQL** en un caso práctico. Más que solo construir una aplicación funcional, quería trabajar cada parte sin depender de frameworks de diseño como Bootstrap ni automatizaciones.
+
+Para ello, tomé como referencia un diseño creado por un desarrollador ucraniano y lo repliqué manualmente, descomponiéndolo en secciones para analizar su estructura. Planifiqué la interfaz en componentes reutilizables, diseñé la arquitectura del backend y definí los servicios necesarios.
+
+A lo largo del desarrollo, implementé mejoras sobre el diseño original, como un buscador de artículos y un menú responsivo. Aunque hoy el blog no recibe nuevas publicaciones, sigue activo como un espacio donde puse en práctica lo aprendido y en donde pude mejorar mis habilidades en desarrollo web.
 
 ## Herramientas utilizadas
-Este proyecto ha sido construido principalmente con las siguientes herramientas:
 
 ### Frontend
-* [Angular](https://angular.io/)
-* [TypeScript](https://www.typescriptlang.org/)
-* [RxJS](https://rxjs.dev/)
+* [**Angular**](https://angular.io/)
+* [**TypeScript**](https://www.typescriptlang.org/)
+* [**RxJS**](https://rxjs.dev/)
+
 ### Backend
-* [Node.js](https://nodejs.org/es)
-* [Express](https://expressjs.com/es/)
-* [MySQL](https://www.mysql.com/)
+* [**Node.js**](https://nodejs.org/es)
+* [**Express**](https://expressjs.com/es/)
+* [**MySQL**](https://www.mysql.com/)
